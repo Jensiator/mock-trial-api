@@ -8,9 +8,10 @@
     "mock-api-demo": "json-server --watch server-mock/db.js --routes server-mock/routes.json -H 0.0.0.0 -p 3000 -w"
   },
   "private": true,
-  "dependencies": {},
-  "devDependencies": {
-    "faker": "^5.5.3",
+  "dependencies": {
     "json-server": "^0.17.0"
+  },
+  "devDependencies": {
+    "faker": "^5.5.3"
   }
 }
