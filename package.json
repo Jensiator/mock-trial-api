@@ -3,9 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "create-db": "node utils/create-db.js",
-    "start": "node server.js",
-    "serve-demo": "ng serve --configuration=development --proxy-config proxy-dev.config.json --host 0.0.0.0 --disable-host-check",
-    "mock-api-demo": "json-server --watch server-mock/db.js --routes server-mock/routes.json -H 0.0.0.0 -p 3000 -w"
+    "start": "node server.js"
   },
   "private": true,
   "dependencies": {
