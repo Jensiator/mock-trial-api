@@ -6,4 +6,4 @@ const middlewares = jsonServer.defaults();
 server.use(middlewares);
 server.use(router);
 server.use(jsonServer.rewriter('routes.json'));
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
