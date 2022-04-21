@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "create-db": "node utils/create-db.js",
-    "start": "node server.js"
+    "start": "node server.js --no-cors"
   },
   "private": true,
   "dependencies": {
