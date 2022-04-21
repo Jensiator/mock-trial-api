@@ -6,6 +6,4 @@ const middlewares = jsonServer.defaults();
 server.use(middlewares);
 server.use(router);
 server.use(jsonServer.rewriter('routes.json'));
-server.listen(3000, () => {
-  console.log('JSON Server is running')
-})
+server.listen(3000);
