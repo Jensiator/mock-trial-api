@@ -1,0 +1,5 @@
+{
+    "/trials/:trialId/animals/:animalId": "animals/:animalId",
+    "/trials/:trialId/users/:userId": "users/:userId",
+    "/farms/:farmId/animals/:animalId": "animals/:animalId"
+}
