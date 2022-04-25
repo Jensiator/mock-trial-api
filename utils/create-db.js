@@ -16,6 +16,7 @@ for (var id = 0; id < 50; id++) {
         "start": start,
         "end": end,
         "created": created,
+        "animalType": faker.datatype.number({ 'min': 1, 'max': 4 }),
         "status": null,
         "changed": "2022-05-12T14:04:39.041567+02:00",
         "farmId": faker.datatype.number({ 'min': 1, 'max': 3 })
@@ -31,46 +32,25 @@ for (var id = 0; id < 200; id++) {
     const animal = {
         "id": `${faker.datatype.number({ 'min': 1000, 'max': 9999 })}-${faker.datatype.number({ 'min': 100, 'max': 999 })}-${id + 1}`,
         "type": type,
-        "farmId": farm,
-        'gender': faker.datatype.boolean() ? '1' : '2'
+        "daysInMilk": faker.datatype.number({ 'min': 1, 'max': 100 }),
+        'gender': faker.datatype.boolean() ? '1' : '2',
+        "hasTrial": false
     };
-    if (faker.datatype.boolean()) {
-        animal.hasTrial = true;
-        animal.trialId = faker.datatype.number({ 'min': 1, 'max': 50 })
-    } else {
-        animal.hasTrial = false;
+    const farmIndex = faker.datatype.number({ 'min': 1, 'max': 48 });
+    for (var index = farmIndex; index < 50; index++) {
+        if (trials[index].animalType === animal.type) {
+            animal.trialId = trials[index].id;
+            animal.hasTrial = true;
+            break;
+        }
     }
     animals.push(animal);
 }
 
-// const users = [
-//     { "id": 1, "name": "Ann-Charlotte Karlsson" },
-//     { "id": 2, "name": "Anna Hessle" },
-//     { "id": 3, "name": "Bengt-Ove Rustas" },
-//     { "id": 4, "name": "Caroline Carlström" },
-//     { "id": 5, "name": "Dirk-Jan de Koning" },
-//     { "id": 6, "name": "Eva Rundlöf" },
-//     { "id": 7, "name": "Frida Dahlström" },
-//     { "id": 8, "name": "Jenni Burman" },
-//     { "id": 9, "name": "Johan Dicksved" },
-//     { "id": 10, "name": "Juana Chagas" },
-//     { "id": 11, "name": "Julia Österberg" },
-//     { "id": 12, "name": "Lotta Jönsson" },
-//     { "id": 13, "name": "Lotta Rydhmer" },
-//     { "id": 14, "name": "Magdalena Åkerfeldt" },
-//     { "id": 15, "name": "Mats Pehrsson" },
-//     { "id": 16, "name": "Mia Jernhake" },
-//     { "id": 17, "name": "Mohammad Ramin" },
-//     { "id": 18, "name": "Mårten Hetta" },
-//     { "id": 19, "name": "Olle Håstad" },
-//     { "id": 20, "name": "Reija Danielsson" },
-//     { "id": 21, "name": "Tomas Klingström" }
-// ];
 const users = [];
 for (var id = 1; id < 21; id++) {
-    users.push({id,name:faker.name.findName()})
+    users.push({ id, name: faker.name.findName() })
 }
-
 for (const user of users) {
     if (faker.datatype.boolean()) {
         user.trialId = faker.datatype.number({ 'min': 1, 'max': 50 })
