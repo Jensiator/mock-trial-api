@@ -17,6 +17,21 @@ server.post('/trials/:trialId/animals-delete', (req, res) => {
     res.end('200');
 });
 
+server.post('/trials/:trialId/animals', (req, res) => {
+    console.log('req', req);
+    const animals = router.db.get("animals").valueOf();
+    for (const id of req.body.ids) {
+        console.log('id', id);
+        const animal = animals.find(a => a.id === id);
+
+        console.log('animal', animal);
+        animal.trialId = req.trialId;
+        animal.hasTrial = true;
+        console.log('new animal', animal);
+    }
+    res.end('200');
+});
+
 server.use(router);
 server.use(jsonServer.rewriter('routes.json'));
 server.listen(process.env.PORT || 3000);

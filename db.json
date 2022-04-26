@@ -692,8 +692,8 @@
       "type": 3,
       "daysInMilk": 35,
       "gender": "1",
-      "hasTrial": true,
-      "trialId": 37
+      "hasTrial": false,
+      "trialId": null
     },
     {
       "id": "2140-543-12",
@@ -860,8 +860,8 @@
       "type": 4,
       "daysInMilk": 18,
       "gender": "1",
-      "hasTrial": true,
-      "trialId": 46
+      "hasTrial": false,
+      "trialId": null
     },
     {
       "id": "7668-514-33",
@@ -924,8 +924,8 @@
       "type": 2,
       "daysInMilk": 22,
       "gender": "2",
-      "hasTrial": true,
-      "trialId": 50
+      "hasTrial": false,
+      "trialId": null
     },
     {
       "id": "2612-512-41",
@@ -1012,8 +1012,8 @@
       "type": 4,
       "daysInMilk": 82,
       "gender": "1",
-      "hasTrial": true,
-      "trialId": 46
+      "hasTrial": false,
+      "trialId": null
     },
     {
       "id": "7419-885-52",
@@ -1140,8 +1140,8 @@
       "type": 3,
       "daysInMilk": 25,
       "gender": "2",
-      "hasTrial": true,
-      "trialId": 37
+      "hasTrial": false,
+      "trialId": null
     },
     {
       "id": "9181-567-68",
@@ -1300,8 +1300,8 @@
       "type": 3,
       "daysInMilk": 1,
       "gender": "1",
-      "hasTrial": true,
-      "trialId": 37
+      "hasTrial": false,
+      "trialId": null
     },
     {
       "id": "9724-404-88",
@@ -1654,8 +1654,8 @@
       "type": 4,
       "daysInMilk": 12,
       "gender": "2",
-      "hasTrial": true,
-      "trialId": 46
+      "hasTrial": false,
+      "trialId": null
     },
     {
       "id": "5589-329-133",
@@ -1806,8 +1806,8 @@
       "type": 3,
       "daysInMilk": 97,
       "gender": "2",
-      "hasTrial": true,
-      "trialId": 37
+      "hasTrial": false,
+      "trialId": null
     },
     {
       "id": "9935-741-152",
@@ -2022,8 +2022,8 @@
       "type": 2,
       "daysInMilk": 53,
       "gender": "2",
-      "hasTrial": true,
-      "trialId": 50
+      "hasTrial": false,
+      "trialId": null
     },
     {
       "id": "6260-793-179",
@@ -2199,6 +2199,54 @@
       "gender": "1",
       "hasTrial": true,
       "trialId": 49
+    },
+    {
+      "ids": [
+        {
+          "id": "6692-438-51"
+        },
+        {
+          "id": "5152-672-132"
+        }
+      ],
+      "trialId": ":id",
+      "id": "MIYsVyu"
+    },
+    {
+      "ids": [
+        {
+          "id": "6692-438-51"
+        },
+        {
+          "id": "5152-672-132"
+        }
+      ],
+      "trialId": ":id",
+      "id": "A434BIy"
+    },
+    {
+      "ids": [
+        "6692-438-51",
+        "5152-672-132"
+      ],
+      "trialId": ":id",
+      "id": "5WYEYfF"
+    },
+    {
+      "ids": [
+        "4702-978-40",
+        "5773-150-178"
+      ],
+      "trialId": ":id",
+      "id": "YLwXm8e"
+    },
+    {
+      "ids": [
+        "4702-978-40",
+        "5773-150-178"
+      ],
+      "trialId": ":id",
+      "id": "xBp3pz-"
     }
   ],
   "users": [
