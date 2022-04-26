@@ -18,16 +18,11 @@ server.post('/trials/:trialId/animals-delete', (req, res) => {
 });
 
 server.post('/trials/:trialId/animals', (req, res) => {
-    console.log('req', req);
     const animals = router.db.get("animals").valueOf();
     for (const id of req.body.ids) {
-        console.log('id', id);
         const animal = animals.find(a => a.id === id);
-
-        console.log('animal', animal);
         animal.trialId = req.trialId;
         animal.hasTrial = true;
-        console.log('new animal', animal);
     }
     res.end('200');
 });
