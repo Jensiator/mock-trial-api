@@ -10,8 +10,9 @@ server.use(jsonServer.bodyParser);
 server.post('/trials/:trialId/animals-delete', (req, res) => {
     const animals = router.db.get("animals").valueOf();
     for (const id of req.body.ids) {
-        const animal = animals.find(a=>a.id === id);
-        animal.trialId=null;
+        const animal = animals.find(a => a.id === id);
+        animal.trialId = null;
+        animal.hasTrial = false;
     }
     res.end('200');
 });
