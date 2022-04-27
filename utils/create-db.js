@@ -48,12 +48,13 @@ for (var id = 0; id < 200; id++) {
 }
 
 const users = [];
-for (var id = 1; id < 21; id++) {
+users.push({ id: 1, name: 'Administraor', isAdmin: true });
+for (var id = 2; id < 21; id++) {
     users.push({ id, name: faker.name.findName() })
 }
 for (const user of users) {
     if (faker.datatype.boolean()) {
-        user.trialId = faker.datatype.number({ 'min': 1, 'max': 50 })
+        user.trialIds = [faker.datatype.number({ 'min': 1, 'max': 50 })]
     }
 }
 

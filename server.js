@@ -7,6 +7,18 @@ const router = jsonServer.router('db.json');
 server.use(jsonServer.defaults());
 server.use(jsonServer.bodyParser);
 
+
+server.get('/trials/:trialId/users', (req, res) => {
+    const users = router.db.get("users").valueOf();
+    const retUsers = [];
+    for (const user of users) {
+        if (user.trialIds?.includes(+req.params.trialId)) {
+            retUsers.push(user);
+        }
+    }
+    res.jsonp(retUsers);
+});
+
 server.post('/trials/:trialId/animals-delete', (req, res) => {
     const animals = router.db.get("animals").valueOf();
     for (const id of req.body.ids) {
@@ -24,6 +36,32 @@ server.post('/trials/:trialId/animals', (req, res) => {
         animal.trialId = req.params.trialId;
         animal.hasTrial = true;
     }
+    res.end('200');
+});
+
+server.post('/trials', (req, res, next) => {
+    const trials = router.db.get("trials").valueOf();
+    const trial = {
+        id: trials.length + 1,
+        name: req.body.name,
+        farmId: req.body.farmId,
+        description: req.body.description,
+        animalType: req.body.animalType,
+        created: new Date(),
+        changed: new Date()
+    };
+    trials.push(trial);
+    const userId = req.headers.authorization;
+    const users = router.db.get("users").valueOf();
+    const user = users.find(a => a.id === +userId);
+    user.trialId = trial.id;
+    res.end('' + trial.id);
+});
+
+server.post('/trials/:trialId/users', (req, res, next) => {
+    const users = router.db.get("users").valueOf();
+    const user = users.find(a => a.id === +req.body.id);
+    user.trialIds = user.trialIds?[...user.trialIds,+req.body.trialId]:[+req.body.trialId];
     res.end('200');
 });
 
