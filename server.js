@@ -21,7 +21,7 @@ server.post('/trials/:trialId/animals', (req, res) => {
     const animals = router.db.get("animals").valueOf();
     for (const id of req.body.ids) {
         const animal = animals.find(a => a.id === id);
-        animal.trialId = req.trialId;
+        animal.trialId = req.params.trialId;
         animal.hasTrial = true;
     }
     res.end('200');
