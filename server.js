@@ -7,6 +7,9 @@ const router = jsonServer.router('db.json');
 server.use(jsonServer.defaults());
 server.use(jsonServer.bodyParser);
 
+server.get('/users/current', (req, res) => {
+    res.jsonp({name:'Administrator',id:1,isAdmin:true});
+});
 
 server.get('/trials/:trialId/users', (req, res) => {
     const users = router.db.get("users").valueOf();
@@ -64,6 +67,8 @@ server.post('/trials/:trialId/users', (req, res, next) => {
     user.trialIds = user.trialIds?[...user.trialIds,+req.body.trialId]:[+req.body.trialId];
     res.end('200');
 });
+
+
 
 server.use(router);
 server.use(jsonServer.rewriter('routes.json'));
